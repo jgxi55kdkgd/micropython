@@ -6,14 +6,24 @@ Answer below....
 If the UART chip on your esp32 is a Silicon Labs CP210x - you can download the CP210x driver from their website. 
 See the other README in this folder for more details.
 
-**** YOU MUST RUN THE "USBIPD ATTACH" COMMAND BEFORE STARTING THE DOCKER CONTAINER OR IT WILL FAIL **** 
-              ***** This script is here to take care of that and more. *******
+**** YOU MUST RUN THE "USBIPD ATTACH" COMMAND BEFORE STARTING THE DOCKER CONTAINER OR IT WILL FAIL TO START **** 
+
+The python script in this folder is not required but I find it useful. If you prefer you can run the usbipd commands manually as listed here.
+
+Get and install the Microsoft usbipd msi file from https://github.com/dorssel/usbipd-win/releases. Then run...
+1. usbipd list (and note the hardware address of your board)
+2. usbipd bind --hardware-id 10c4:ea60 (needs windows admin rights - use your own hardware id)
+3. usbipd attach --wsl --hardware-id 10c4:ea60 (do NOT run with admin rights if you run vscode as another user)
+
+You only need to bind your board once. Removing the USB device automatically detaches it.
+
+Or...if it is easier, use the controller.py menu based script....
 
 1. You need python installed on your windows host.
 
-2. Get and install the usbipd msi file from https://github.com/dorssel/usbipd-win/releases
+2. Get and install the Microsoft usbipd msi file from https://github.com/dorssel/usbipd-win/releases
 
-3. The python script in this directory must be copied to your windows docker host and run from there (eg "PS C:\Users\Me\Desktop> python .\controller.py"). 
+3. The python script in this directory can be copied to your Windows docker host and run from there (eg "PS C:\Users\Me\Desktop> python .\controller.py"). 
 
 4. Optionally - edit controller.py to add the board you are looking (use "usbipd list" on windows to identify your board).
 Then edit the line that will match part of the string to your board: 
