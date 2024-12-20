@@ -5,7 +5,7 @@ Important: Before starting this container your USB device must **already be avai
 You need...
 1. Docker installed and running, 
 2. VS Code plus the Docker Containers extension installed...
- then you can simply fork this repo, bring up the command pallete and start typing "Dev Containers: Clone Repository In Container Volume...". It will automatically be linked to your newly forked git repo.
+ then you can simply fork this repo, bring up the command palette and start typing "Dev Containers: Clone Repository In Container Volume...". It will automatically be linked to your newly forked git repo.
 3. An ESP32 device flashed with Micropython
 
 A "project" is simply any folder you create at the default top level of the container volume - eg /workspaces/micropython/Project1.
