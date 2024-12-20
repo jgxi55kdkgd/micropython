@@ -1,0 +1,20 @@
+{
+  "name": "MicroPython ESP32",
+	"build": {
+		"dockerfile": "Dockerfile"
+  },
+  // we need to pass through USB0 from WSL to the container
+  "runArgs": [
+    "--device",
+    "/dev/ttyUSB0:/dev/ttyUSB0"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // uncomment line below to use Pymakr
+        //"Pycom.pymakr"
+      ]
+    }
+  },
+ "postCreateCommand": "./.devcontainer/containerconfig.sh"
+}

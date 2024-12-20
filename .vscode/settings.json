@@ -1,0 +1,20 @@
+//You can add these values into your workspace settings.json to prevent Pylance errors with modules like "From machine"
+
+//Command pallete and then Preferences: Open Workspace Settings (JSON) - paste this into the Settings section:
+
+
+{
+    //"python.analysis.extraPaths": [
+        //"/usr/local/lib/python3.13/site-packages"
+    //],
+    //"python.analysis.useLibraryCodeForTypes": false,
+    //"python.analysis.stubPath": "typings",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.typeshedPaths": [
+        "typings"
+    ],
+}

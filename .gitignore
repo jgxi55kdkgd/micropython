@@ -1,0 +1,8 @@
+secrets.py
+*.pyc
+*.pyo
+__pycache__
+typings
+
+
+
