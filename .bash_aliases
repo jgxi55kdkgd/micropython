@@ -28,4 +28,6 @@ alias mpwifigo='mpremote u0 run ${WSHOME}/utils/start_wifi.py'
     # starts WiFi on your ESP32 (needs secrets.py)
 alias mpwifistop='mpremote u0 run ${WSHOME}/utils/stop_wifi.py' 
     # stops WiFI on your ESP32
+alias mpreset='mpremote reset' 
+    # reset ESP32
 
