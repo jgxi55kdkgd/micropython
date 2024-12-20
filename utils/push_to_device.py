@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# takes an argument of the project folder name and copies everything from there onto the ESP32 
+# (except for files listed in .mpignore)
 
 import os
 import sys

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# installs the WiFi SSID and password into the secrets.py file on the ESP32
+
 import time
 import os
 import subprocess

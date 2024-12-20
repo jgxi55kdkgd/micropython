@@ -1,5 +1,12 @@
 import network
-import secrets  # Import the secrets.py file
+import sys
+
+try:
+    import secrets
+except ImportError:
+    print("The 'secrets' module is not available. Run mpwifipw to ensure you have set up your Wi-Fi SSID and password first.")
+    sys.exit(1)  # Exit the program if the module is not available
+
 
 # Retrieve SSID and password from secrets.py
 ssid = secrets.WIFI_SSID

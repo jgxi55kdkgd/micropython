@@ -1,3 +1,5 @@
+# copy this file to your Windows Docker host and let it worry about usbipd syntax
+
 import re
 import subprocess
 import sys

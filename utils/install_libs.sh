@@ -1,4 +1,7 @@
 #!/bin/bash
+# installs the list of libraries it finds in the Project directory's libs.manifest file onto the ESP32
+# better to call "mip install" so that we catch all dependencies 
+# we can then copy them back into the project folder with the alias mpgetlib if we want the locally
 
 # Function to validate the directory name
 is_valid_directory() {

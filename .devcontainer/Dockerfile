@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
         udev \
-        # uncomment lines below if you want to use Pymakr
+        # uncomment lines below if you want to use Pymakr and install the extension
         #nodejs \
         #npm \
     && apt-get clean \

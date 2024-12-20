@@ -11,8 +11,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        // uncomment line below to use Pymakr
-        //"Pycom.pymakr"
+        "ms-python.black-formatter"
       ]
     }
   },
