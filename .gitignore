@@ -3,6 +3,7 @@ secrets.py
 *.pyo
 __pycache__
 typings
+P[1-9]
 
 
 
