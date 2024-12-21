@@ -1,7 +1,0 @@
-{
-    "typeCheckingMode": "basic",
-    "stubPath": "typings",
-    "diagnosticSeverityOverrides": {
-        "reportMissingModuleSource": "none"
-    }
-}

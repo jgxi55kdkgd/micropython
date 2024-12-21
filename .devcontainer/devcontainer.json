@@ -3,7 +3,8 @@
 	"build": {
 		"dockerfile": "Dockerfile"
   },
-  // we need to pass through USB0 from WSL to the container
+  // We need to pass through USB0 from WSL to the devcontainer.
+  // This method is more secure than the "privileged" method
   "runArgs": [
     "--device",
     "/dev/ttyUSB0:/dev/ttyUSB0"

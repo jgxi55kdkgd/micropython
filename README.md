@@ -1,12 +1,12 @@
-Micropython VS Code devcontainer for ESP32 with Windows 11 support
+Micropython VS Code devcontainer for ESP32 with Windows 11 USB support
 
-Important: Before starting this container your USB device must **already be available** to WSL as /dev/ttyUSB0. See the windows_usb_passthrough folder for more details and useful scripts. This is because the container assumes your device is on USB0. 
+Important: Before starting this container your USB device must **already be available** to WSL as /dev/ttyUSB0. See the windows_usb_passthrough folder for more details and useful scripts. This is because the container assumes your device is already accessible via USB0 (the devcontainer.json -device option). 
 
-You need...
+You will need...
 1. Docker installed and running, 
 2. VS Code plus the Docker Containers extension installed...
- then you can simply fork this repo, bring up the command palette and start typing "Dev Containers: Clone Repository In Container Volume...". It will automatically be linked to your newly forked git repo.
-3. An ESP32 device flashed with Micropython
+ ...then you can simply fork this repo, bring up the command palette in vscode and start typing "Dev Containers: Clone Repository In Container Volume...". Your newly created development container will automatically be linked to your forked git repo.
+3. An ESP32 device flashed with Micropython (see Micropython site for details)
 
 A "project" is simply any folder you create at the default top level of the container volume - eg /workspaces/micropython/Project1.
 

@@ -12,7 +12,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # we need these useful tools
-RUN pip install esptool mpremote --no-user
+RUN pip install esptool mpremote black --no-user
 # give permission to vscode to use the USB device
 RUN usermod -aG plugdev,dialout vscode
 

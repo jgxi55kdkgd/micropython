@@ -10,4 +10,3 @@ while True:
     time.sleep(0.5)  # Wait for 0.5 seconds
     led.value(0)  # Turn LED off
     time.sleep(2.5)  # Wait for 0.5 seconds
-    
