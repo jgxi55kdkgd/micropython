@@ -13,5 +13,9 @@
     "editor.formatOnSave": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
-    }
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/P1/lib",
+        "${workspaceFolder}/P2/lib"
+    ]
 }

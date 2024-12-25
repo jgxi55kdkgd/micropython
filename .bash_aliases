@@ -1,11 +1,15 @@
 alias ll='ls -l'
+alias mp='mpremote'
 alias esp="esptool.py -p /dev/ttyUSB0 chip_id" 
     # query your esp32 processor details
 mpx() {
     local folder=${1:-.}  # Use the argument passed to the function, default to "."
     mpremote mount "$folder" exec "import main"
 }
-    # mount a folder of my choice onto the device and run main.py
+    # mount a folder of my choice onto the device and run main.py in that folder
+    # note that the folder gets mounted as /remote but the lib path will still use /lib
+alias mpformat='mpremote xrun'
+    # executes main.py on the ESP32. Unlike mpremote run it doesn't copy the file over
 alias mpformat='mpremote littlefs_esp' 
     # reformat the filesystem and start again (quick way of rm -r)
 alias mpip='mpremote ifconfig' 
@@ -20,7 +24,7 @@ alias mpgetlib='${WSHOME}/utils/download_libs.sh'
     # pull the lib folder from your device down into local project folder
 alias mppush='${WSHOME}/utils/install_code.sh' 
     # push code from your project folder to ESP32 except files/dirs listed in .mpignore
-alias mputlib='${WSHOME}/utils/install_libs.sh' 
+alias mpputlib='${WSHOME}/utils/install_libs.sh' 
     # installs libs listed in your libs.manifest file directly onto ESP32
 alias mpwifipw='${WSHOME}/utils/install_wifi_pw.py' 
     # installs your WiFi SSID and Password onto ESP32 as /secrets.py
