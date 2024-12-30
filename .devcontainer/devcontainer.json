@@ -1,13 +1,15 @@
 {
   "name": "MicroPython ESP32",
-	"build": {
-		"dockerfile": "Dockerfile"
+  "build": {
+    "dockerfile": "Dockerfile"
   },
   // We need to pass through USB0 from WSL to the devcontainer.
   // This method is more secure than the "privileged" method
   "runArgs": [
     "--device",
     "/dev/ttyUSB0:/dev/ttyUSB0"
+    //"--device",
+    //"/dev/ttyUSB1:/dev/ttyUSB1"
   ],
   "customizations": {
     "vscode": {
@@ -16,5 +18,5 @@
       ]
     }
   },
- "postCreateCommand": "./.devcontainer/containerconfig.sh"
+  "postCreateCommand": "./.devcontainer/containerconfig.sh"
 }

@@ -16,6 +16,8 @@
     },
     "python.analysis.extraPaths": [
         "${workspaceFolder}/P1/lib",
-        "${workspaceFolder}/P2/lib"
+        "${workspaceFolder}/P2/lib",
+        "${workspaceFolder}/P4/lib",
+        "${workspaceFolder}/P6/lib"
     ]
 }

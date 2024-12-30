@@ -4,8 +4,23 @@
 import time
 import os
 import subprocess
+import sys
+import re
+
 
 def main():
+    # Default USB value
+    usb_val = "u0"
+
+    # Check if an argument is provided
+    if len(sys.argv) > 1:
+        arg = sys.argv[1]
+        if re.match(r"^u[0-9]$", arg):
+            usb_val = arg
+        else:
+            print("Error: Argument must match the pattern 'u[0-9]'.")
+            sys.exit(1)
+
     # Prompt for WiFi credentials
     ssid = input("Enter WiFi SSID: ")
     password = input("Enter WiFi Password: ")
@@ -17,14 +32,15 @@ def main():
 
     # Use mpremote (installed via pip install mpremote) to copy it to the MicroPython device
     try:
-        subprocess.run(["mpremote", "cp", temp_path, ":secrets.py"], check=True)
-        print("File now updated on microcontroller - contents shown below")
+        subprocess.run(
+            ["mpremote", usb_val, "cp", temp_path, ":secrets.py"], check=True
+        )
+        print(f"File now updated on microcontroller {usb_val} - contents shown below")
         time.sleep(1)
-        subprocess.run(["mpremote", "cat", "secrets.py"], check=True)
+        subprocess.run(["mpremote", usb_val, "cat", "secrets.py"], check=True)
     finally:
         os.remove(temp_path)
 
+
 if __name__ == "__main__":
     main()
-
-

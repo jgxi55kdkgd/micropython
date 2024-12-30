@@ -40,12 +40,6 @@ if [ ! -f "$LIBS_MANIFEST" ] || [ ! -s "$LIBS_MANIFEST" ]; then
   exit 0
 fi
 
-# Install Wi-Fi password script
-${WSHOME}/utils/install_wifi_pw.py
-
-# Start Wi-Fi
-mpremote u0 run ${WSHOME}/utils/start_wifi.py
-
 # Iterate over each line in libs.manifest and install libraries
 while IFS= read -r lib; do
   if [ -n "$lib" ]; then
@@ -54,5 +48,3 @@ while IFS= read -r lib; do
   fi
 done < "$LIBS_MANIFEST"
 
-# Stop Wi-Fi
-mpremote u0 run ${WSHOME}/utils/stop_wifi.py
